@@ -436,11 +436,11 @@ body {
 
 .stat-label {
   font-size: var(--font-size-sm);
-  color: #666666;
+  color: #333333;
   margin-bottom: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .stat-value {
@@ -460,7 +460,8 @@ body {
 .progress-section h2 {
   font-size: var(--font-size-lg);
   margin-bottom: var(--spacing-md);
-  color: var(--text-primary);
+  color: #1A1A1A;
+  font-weight: 700;
 }
 
 .progress-container {
@@ -486,8 +487,8 @@ body {
 
 .progress-text {
   font-size: var(--font-size-sm);
-  color: #666666;
-  font-weight: 500;
+  color: #333333;
+  font-weight: 600;
 }
 
 .actions-section {
@@ -524,7 +525,7 @@ body {
   font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #555555;
+  color: #333333;
 }
 
 .category-progress {
@@ -554,8 +555,8 @@ body {
 
 .category-details {
   font-size: var(--font-size-xs);
-  color: #666666;
-  font-weight: 500;
+  color: #333333;
+  font-weight: 600;
 }
 
 /* ============================================
@@ -800,8 +801,8 @@ body {
 
 .result-message {
   font-size: var(--font-size-base);
-  color: #666666;
-  font-weight: 500;
+  color: #333333;
+  font-weight: 600;
 }
 
 .category-breakdown-section {
@@ -837,8 +838,8 @@ body {
 }
 
 .category-result span:last-child {
-  color: #666666;
-  font-weight: 500;
+  color: #333333;
+  font-weight: 600;
 }
 
 .complete-actions {
@@ -886,8 +887,8 @@ body {
 .settings-section.info-section p {
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
-  color: #666666;
-  font-weight: 500;
+  color: #333333;
+  font-weight: 600;
 }
 
 .settings-section a {
