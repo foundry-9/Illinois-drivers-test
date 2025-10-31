@@ -59,7 +59,9 @@
 }
 
 /* Dark mode theme */
-:root.dark-mode {
+:root.dark-mode,
+html.dark-mode,
+body.dark-mode {
   --text-primary: #E0E0E0;
   --text-secondary: #A0A0A0;
   --text-light: #616161;
@@ -935,4 +937,100 @@ body {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
+}
+
+/* ============================================
+   Dark Mode Explicit Overrides
+   ============================================ */
+html.dark-mode body,
+body.dark-mode {
+  background-color: #1E1E1E;
+  color: #E0E0E0;
+}
+
+html.dark-mode .stat-card,
+body.dark-mode .stat-card {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+html.dark-mode .progress-section,
+body.dark-mode .progress-section {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+html.dark-mode .category-stats-section,
+body.dark-mode .category-stats-section {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+html.dark-mode .settings-section,
+body.dark-mode .settings-section {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+html.dark-mode .results-summary,
+body.dark-mode .results-summary {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+html.dark-mode .category-breakdown-section,
+body.dark-mode .category-breakdown-section {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+}
+
+html.dark-mode .test-header,
+body.dark-mode .test-header {
+  background-color: #1E1E1E;
+  border-bottom-color: #2A2A2A;
+}
+
+html.dark-mode .answer-option,
+body.dark-mode .answer-option {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+  border-color: #3A3A3A;
+}
+
+html.dark-mode .answer-option:hover:not(:disabled),
+body.dark-mode .answer-option:hover:not(:disabled) {
+  background-color: rgba(33, 150, 243, 0.15);
+  border-color: #2196F3;
+}
+
+html.dark-mode .progress-bar-bg,
+body.dark-mode .progress-bar-bg {
+  background-color: #2A2A2A;
+}
+
+html.dark-mode .category-stat,
+body.dark-mode .category-stat {
+  background-color: #2A2A2A;
+  border-left-color: #2196F3;
+}
+
+html.dark-mode .form-group input,
+html.dark-mode .form-group textarea,
+html.dark-mode .form-group select,
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea,
+body.dark-mode .form-group select {
+  background-color: #2A2A2A;
+  color: #E0E0E0;
+  border-color: #3A3A3A;
+}
+
+html.dark-mode .form-group input:focus,
+html.dark-mode .form-group textarea:focus,
+html.dark-mode .form-group select:focus,
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus,
+body.dark-mode .form-group select:focus {
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
 }

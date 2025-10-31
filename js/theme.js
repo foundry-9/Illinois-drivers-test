@@ -32,6 +32,7 @@ const Theme = (() => {
       }
 
       initialized = true;
+      console.log('Theme system initialized');
     }
 
     // Always update listeners when screens change
@@ -66,7 +67,9 @@ const Theme = (() => {
    */
   const applyDarkMode = () => {
     document.documentElement.classList.add(DARK_MODE_CLASS);
+    document.body.classList.add(DARK_MODE_CLASS);
     updateThemeToggleButtons('☀️'); // Show sun icon when dark mode is on
+    console.log('Dark mode applied. HTML class:', document.documentElement.className);
   };
 
   /**
@@ -74,7 +77,9 @@ const Theme = (() => {
    */
   const applyLightMode = () => {
     document.documentElement.classList.remove(DARK_MODE_CLASS);
+    document.body.classList.remove(DARK_MODE_CLASS);
     updateThemeToggleButtons('🌙'); // Show moon icon when light mode is on
+    console.log('Light mode applied. HTML class:', document.documentElement.className);
   };
 
   /**
