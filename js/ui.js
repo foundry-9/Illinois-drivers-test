@@ -54,10 +54,11 @@ const UI = (() => {
       const masteredCount = Storage.getMasteredQuestions().length;
       const missedCount = Storage.getMissedQuestions().length;
 
-      // Update greeting
+      // Update greeting with encouraging message
       const greetingEl = document.querySelector('#greeting');
       if (greetingEl && user) {
-        greetingEl.textContent = `Welcome back, ${user.name}!`;
+        const greeting = Messages.getGreeting(user.name);
+        greetingEl.textContent = `${greeting.emoji} ${greeting.message}`;
       }
 
       // Update stats display
@@ -218,11 +219,14 @@ const UI = (() => {
       feedbackEl.classList.remove('hidden');
 
       if (result.isCorrect) {
+        // Get encouraging message for correct answer
+        const correctMsg = Messages.getCorrectMessage();
+
         feedbackEl.className = 'feedback-container correct';
         feedbackEl.innerHTML = `
           <div class="feedback-message">
             <div class="checkmark">✓</div>
-            <div class="feedback-text">Excellent! You got it!</div>
+            <div class="feedback-text">${correctMsg.emoji} ${correctMsg.message}</div>
           </div>
           <div class="explanation">${result.explanation}</div>
         `;
@@ -232,23 +236,38 @@ const UI = (() => {
           Animations.celebrateCorrect(answerOptionsContainer.parentElement);
         }
 
-        // Check for streaks or mastery
+        // Check for streaks and mastery
         const question = Quiz.getCurrentQuestion();
         const record = Storage.getQuestionRecord(question.id);
+        const stats = Storage.getStats();
 
+        // Show mastery message if question was just mastered
         if (record.mastered) {
-          const masteryMsg = document.createElement('div');
-          masteryMsg.className = 'mastery-message';
-          masteryMsg.textContent = '🎉 Question Mastered!';
-          feedbackEl.appendChild(masteryMsg);
+          const masteryMsg = Messages.getMasteryMessage();
+          const masteryDiv = document.createElement('div');
+          masteryDiv.className = 'mastery-message';
+          masteryDiv.textContent = `${masteryMsg.emoji} ${masteryMsg.message}`;
+          feedbackEl.appendChild(masteryDiv);
           Animations.celebrateMastery(feedbackEl);
         }
+
+        // Check for streak milestones
+        const streakMsg = Messages.getStreakMessage(stats.currentStreak);
+        if (streakMsg) {
+          const streakDiv = document.createElement('div');
+          streakDiv.className = 'streak-message';
+          streakDiv.textContent = `${streakMsg.emoji} ${streakMsg.message}`;
+          feedbackEl.appendChild(streakDiv);
+        }
       } else {
+        // Get supportive message for incorrect answer
+        const incorrectMsg = Messages.getIncorrectMessage();
+
         feedbackEl.className = 'feedback-container incorrect';
         feedbackEl.innerHTML = `
           <div class="feedback-message">
             <div class="x-mark">✗</div>
-            <div class="feedback-text">Not quite, but you're learning!</div>
+            <div class="feedback-text">${incorrectMsg.emoji} ${incorrectMsg.message}</div>
           </div>
           <div class="explanation">
             <strong>Correct answer:</strong> ${result.correctAnswer}
@@ -331,17 +350,8 @@ const UI = (() => {
      * Get encouraging message based on performance
      */
     getResultMessage(percentage) {
-      if (percentage === 100) {
-        return "Perfect score! You're crushing it! 🌟";
-      } else if (percentage >= 90) {
-        return "Excellent work! You really know this stuff! 🎉";
-      } else if (percentage >= 80) {
-        return "Great job! Keep practicing and you'll master this! 💪";
-      } else if (percentage >= 70) {
-        return "Good effort! You're making progress! 📈";
-      } else {
-        return "Keep practicing! Every attempt helps you learn! 📚";
-      }
+      const resultMsg = Messages.getResultMessage(percentage);
+      return `${resultMsg.emoji} ${resultMsg.message}`;
     },
 
     /**

@@ -361,6 +361,80 @@ a {
 }
 
 /* ============================================
+   Message Animations
+   ============================================ */
+
+/* Mastery Message Animation */
+@keyframes masteryMessageSlide {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mastery-message {
+  animation: masteryMessageSlide 0.4s ease-out;
+  font-weight: bold;
+  color: #4CAF50;
+  font-size: 1.1em;
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Streak Message Animation */
+@keyframes streakMessagePulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.streak-message {
+  animation: streakMessagePulse 0.3s ease-out;
+  font-weight: bold;
+  color: #FF9800;
+  font-size: 1em;
+  margin-top: 8px;
+  padding: 8px;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Congratulation Message Animation */
+@keyframes congratulationGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+  }
+}
+
+.congratulation-message {
+  animation: congratulationGlow 2s ease-in-out infinite;
+  padding: 16px;
+  margin: 12px 0;
+  background: rgba(76, 175, 80, 0.15);
+  border: 2px solid #4CAF50;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: #2E7D32;
+}
+
+/* ============================================
    Accessibility - Reduced Motion
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
