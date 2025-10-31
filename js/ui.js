@@ -108,6 +108,52 @@ const UI = (() => {
           reviewBtn.textContent = `Review Missed Questions (${missedCount})`;
         }
       }
+
+      // Update achievements display
+      this.updateAchievementsDisplay();
+
+      // Update category stats
+      this.updateCategoryStats();
+    },
+
+    /**
+     * Update achievements display
+     */
+    updateAchievementsDisplay() {
+      if (!Achievements) return;
+
+      const progress = Achievements.getProgress();
+      const progressEl = document.querySelector('#achievementProgress');
+      if (progressEl) {
+        progressEl.innerHTML = `
+          <div class="progress-stat">
+            <span>${progress.earned}/${progress.total}</span>
+            <div class="mini-progress-bar">
+              <div class="mini-progress-fill" style="width: ${progress.percentage}%"></div>
+            </div>
+          </div>
+        `;
+      }
+
+      const earnedAchievements = Achievements.getEarnedAchievements();
+      const achievementsListEl = document.querySelector('#achievementsList');
+      if (achievementsListEl) {
+        if (earnedAchievements.length === 0) {
+          achievementsListEl.innerHTML = '<p class="no-achievements">Start practicing to earn achievements!</p>';
+        } else {
+          achievementsListEl.innerHTML = earnedAchievements
+            .map(achievement => `
+              <div class="achievement-badge earned">
+                <div class="achievement-icon">${achievement.icon}</div>
+                <div class="achievement-info">
+                  <div class="achievement-name">${achievement.name}</div>
+                  <div class="achievement-description">${achievement.description}</div>
+                </div>
+              </div>
+            `)
+            .join('');
+        }
+      }
     },
 
     /**
@@ -329,6 +375,19 @@ const UI = (() => {
         `;
       }
 
+      // Check for new achievements
+      if (Achievements) {
+        const newAchievements = Achievements.checkForNewAchievements();
+        if (results.percentage === 100) {
+          Achievements.checkPerfectTest(results);
+        }
+
+        // Display new achievement notification
+        if (newAchievements.length > 0) {
+          this.showNewAchievementsNotification(newAchievements);
+        }
+      }
+
       // Category breakdown
       const categoryEl = document.querySelector('#categoryBreakdown');
       if (categoryEl && results.resultsByCategory) {
@@ -342,8 +401,43 @@ const UI = (() => {
             <span>${stats.correct}/${stats.attempted} (${percent}%)</span>
           `;
           categoryEl.appendChild(categoryDiv);
+
+          // Check for category mastery achievement
+          if (Achievements && percent === 100) {
+            Achievements.checkCategoryMastery(category, stats);
+          }
         });
       }
+    },
+
+    /**
+     * Show notification for new achievements
+     */
+    showNewAchievementsNotification(achievements) {
+      // Create a notification overlay
+      const notificationEl = document.createElement('div');
+      notificationEl.className = 'achievement-notification';
+      notificationEl.innerHTML = `
+        <div class="achievement-notification-content">
+          <h3>🎉 New Achievement Unlocked!</h3>
+          ${achievements.map(a => `
+            <div class="achievement-unlocked">
+              <div class="achievement-icon-large">${a.icon}</div>
+              <div class="achievement-details">
+                <div class="achievement-name">${a.name}</div>
+                <div class="achievement-description">${a.description}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      document.body.appendChild(notificationEl);
+
+      // Remove after 3 seconds
+      setTimeout(() => {
+        notificationEl.classList.add('fade-out');
+        setTimeout(() => notificationEl.remove(), 500);
+      }, 3000);
     },
 
     /**
@@ -420,6 +514,137 @@ const UI = (() => {
     },
 
     /**
+     * Show detailed statistics screen
+     */
+    showDetailedStats() {
+      showScreen('stats');
+      this.updateDetailedStatsDisplay();
+    },
+
+    /**
+     * Update detailed statistics display
+     */
+    updateDetailedStatsDisplay() {
+      const stats = Storage.getStats();
+      const user = Storage.getUser();
+      const total = QuestionManager.getTotalCount();
+
+      // Overall stats
+      const overallStatsEl = document.querySelector('#overallStats');
+      if (overallStatsEl) {
+        const accuracy = stats.totalAttempts > 0
+          ? Math.round((stats.totalCorrect / stats.totalAttempts) * 100)
+          : 0;
+        const masteredCount = Storage.getMasteredQuestions().length;
+
+        overallStatsEl.innerHTML = `
+          <div class="stat-row">
+            <span>Total Questions Attempted:</span>
+            <span><strong>${stats.totalAttempts}</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Correct Answers:</span>
+            <span><strong>${stats.totalCorrect}</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Incorrect Answers:</span>
+            <span><strong>${stats.totalIncorrect}</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Overall Accuracy:</span>
+            <span><strong>${accuracy}%</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Tests Completed:</span>
+            <span><strong>${stats.testsTaken}</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Questions Mastered:</span>
+            <span><strong>${masteredCount}/${total}</strong></span>
+          </div>
+        `;
+      }
+
+      // Detailed category stats
+      const categories = QuestionManager.getCategories();
+      const categoryStatsEl = document.querySelector('#detailedCategoryStats');
+      if (categoryStatsEl) {
+        categoryStatsEl.innerHTML = categories.map(category => {
+          const catStats = stats.categoryBreakdown[category] || { attempts: 0, correct: 0 };
+          const percent = catStats.attempts > 0
+            ? Math.round((catStats.correct / catStats.attempts) * 100)
+            : 0;
+
+          return `
+            <div class="detailed-category-item">
+              <div class="category-header">
+                <span>${category}</span>
+                <span class="category-score">${percent}%</span>
+              </div>
+              <div class="category-bar">
+                <div class="category-fill" style="width: ${percent}%"></div>
+              </div>
+              <div class="category-detail">
+                <span>${catStats.correct}/${catStats.attempts} correct</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Streak stats
+      const streakStatsEl = document.querySelector('#streakStats');
+      if (streakStatsEl) {
+        streakStatsEl.innerHTML = `
+          <div class="stat-row">
+            <span>Current Streak:</span>
+            <span><strong>${stats.currentStreak} questions</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Longest Streak:</span>
+            <span><strong>${stats.longestStreak} questions</strong></span>
+          </div>
+          <div class="milestone-message">${this.getStreakMessage(stats.currentStreak)}</div>
+        `;
+      }
+
+      // Journey stats
+      const journeyStatsEl = document.querySelector('#journeyStats');
+      if (journeyStatsEl && user) {
+        const createdDate = new Date(user.createdAt).toLocaleDateString();
+        const lastVisitDate = new Date(user.lastVisit).toLocaleDateString();
+        const daysActive = Math.floor((Date.now() - user.createdAt) / (1000 * 60 * 60 * 24)) + 1;
+
+        journeyStatsEl.innerHTML = `
+          <div class="stat-row">
+            <span>Learning Started:</span>
+            <span><strong>${createdDate}</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Last Practice Session:</span>
+            <span><strong>${lastVisitDate}</strong></span>
+          </div>
+          <div class="stat-row">
+            <span>Days Active:</span>
+            <span><strong>${daysActive}</strong></span>
+          </div>
+          <div class="journey-message">Keep up the great work! You're on your way to mastering the Illinois Driver's Test! 🚗</div>
+        `;
+      }
+    },
+
+    /**
+     * Get streak message
+     */
+    getStreakMessage(streak) {
+      if (streak === 0) return '🏁 Start a new streak by answering a question correctly!';
+      if (streak < 5) return `✨ You're building momentum! Keep it going!`;
+      if (streak < 10) return `🔥 Fantastic streak! You're on fire!`;
+      if (streak < 20) return `⭐ Amazing consistency! You're crushing it!`;
+      return `👑 Incredible! You're a question-answering machine!`;
+    },
+
+    /**
      * Show settings screen
      */
     showSettings() {
@@ -440,6 +665,11 @@ const UI = (() => {
       const exportBtn = document.querySelector('#exportBtn');
       if (exportBtn) {
         exportBtn.onclick = () => this.exportData();
+      }
+
+      const importBtn = document.querySelector('#importBtn');
+      if (importBtn) {
+        importBtn.onclick = () => this.importData();
       }
 
       const resetBtn = document.querySelector('#resetBtn');
@@ -468,6 +698,47 @@ const UI = (() => {
       link.click();
 
       URL.revokeObjectURL(url);
+    },
+
+    /**
+     * Import data from JSON file
+     */
+    importData() {
+      const fileInput = document.querySelector('#importFileInput');
+      if (!fileInput) return;
+
+      fileInput.click();
+      fileInput.onchange = (e) => {
+        const file = e.target.files?.[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          try {
+            const importedData = JSON.parse(event.target?.result);
+
+            // Validate the imported data has required fields
+            if (!importedData.user || !importedData.questionHistory || !importedData.stats) {
+              alert('Invalid backup file. Missing required data.');
+              return;
+            }
+
+            if (confirm('This will overwrite your current progress. Are you sure?')) {
+              const success = Storage.importData(importedData);
+              if (success) {
+                alert('Progress imported successfully!');
+                location.reload();
+              } else {
+                alert('Failed to import progress. Please try again.');
+              }
+            }
+          } catch (error) {
+            alert('Failed to read file. Please ensure it is a valid JSON backup.');
+            console.error('Import error:', error);
+          }
+        };
+        reader.readAsText(file);
+      };
     },
 
     /**

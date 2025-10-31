@@ -79,6 +79,7 @@ const App = (() => {
   const setupDashboardListeners = () => {
     const practiceBtn = document.querySelector('#practiceBtn');
     const reviewBtn = document.querySelector('#reviewBtn');
+    const statsBtn = document.querySelector('#statsBtn');
     const settingsBtn = document.querySelector('#settingsBtn');
 
     if (practiceBtn) {
@@ -98,6 +99,13 @@ const App = (() => {
         } else {
           alert('No questions to review.');
         }
+      };
+    }
+
+    if (statsBtn) {
+      statsBtn.onclick = () => {
+        UI.showDetailedStats();
+        setupStatsListeners();
       };
     }
 
@@ -172,6 +180,25 @@ const App = (() => {
         UI.showDashboard();
         setupDashboardListeners();
       };
+    }
+  };
+
+  /**
+   * Setup stats screen listeners
+   */
+  const setupStatsListeners = () => {
+    const backBtn = document.querySelector('#backFromStatsBtn');
+
+    if (backBtn) {
+      backBtn.onclick = () => {
+        UI.showDashboard();
+        setupDashboardListeners();
+      };
+    }
+
+    // Reinitialize theme toggle listeners
+    if (Theme && Theme.init) {
+      Theme.init();
     }
   };
 

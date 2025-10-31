@@ -340,6 +340,58 @@ const Storage = (() => {
         console.error('Error importing data:', e);
         return false;
       }
+    },
+
+    /**
+     * Get achievements
+     */
+    getAchievements() {
+      try {
+        const achievements = localStorage.getItem(getStorageKey('achievements'));
+        return achievements ? JSON.parse(achievements) : [];
+      } catch (e) {
+        console.error('Error retrieving achievements:', e);
+        return [];
+      }
+    },
+
+    /**
+     * Set achievements
+     */
+    setAchievements(achievements) {
+      try {
+        localStorage.setItem(getStorageKey('achievements'), JSON.stringify(achievements));
+        return true;
+      } catch (e) {
+        console.error('Error saving achievements:', e);
+        return false;
+      }
+    },
+
+    /**
+     * Get category masters (categories with 100% accuracy)
+     */
+    getCategoryMasters() {
+      try {
+        const masters = localStorage.getItem(getStorageKey('categoryMasters'));
+        return masters ? JSON.parse(masters) : [];
+      } catch (e) {
+        console.error('Error retrieving category masters:', e);
+        return [];
+      }
+    },
+
+    /**
+     * Set category masters
+     */
+    setCategoryMasters(masters) {
+      try {
+        localStorage.setItem(getStorageKey('categoryMasters'), JSON.stringify(masters));
+        return true;
+      } catch (e) {
+        console.error('Error saving category masters:', e);
+        return false;
+      }
     }
   };
 })();
