@@ -1,11 +1,13 @@
 # Illinois Driver Test Practice Website - Project Plan
 
 ## Overview
+
 A mobile-friendly, interactive practice test website for the Illinois driver's license permit test. The site uses Local Storage for persistence and requires no backend API calls, making it perfect for GitHub Pages hosting.
 
 ## Core Requirements
 
 ### Technical Requirements
+
 - **Hosting**: GitHub Pages compatible (static HTML/CSS/JavaScript)
 - **Storage**: Browser Local Storage only (no backend/API)
 - **Mobile-First**: Optimized for touch interactions on phones and tablets
@@ -13,6 +15,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
 - **Accessible**: WCAG 2.1 AA compliant
 
 ### Functional Requirements
+
 1. User greeting and name capture on first visit
 2. Practice test mode with immediate feedback
 3. Score tracking and analytics
@@ -24,6 +27,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
 ## User Experience Design
 
 ### Visual Style
+
 - **Tone**: Warm, friendly, encouraging, and fun
 - **Colors**: Bright, inviting palette (suggest: blues, greens, warm accents)
 - **Typography**: Clear, readable fonts (system fonts for performance)
@@ -35,6 +39,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
   - Emoji usage for personality and quick feedback
 
 ### Animation & Feedback
+
 - Smooth transitions between questions
 - Haptic-style visual feedback for taps
 - Celebration animations for milestones
@@ -45,6 +50,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
 ### Pages/Views
 
 #### 1. Welcome Screen
+
 - **Purpose**: First-time user greeting and name capture
 - **Elements**:
   - Friendly welcome message
@@ -54,6 +60,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
 - **Storage**: Save user name to Local Storage
 
 #### 2. Dashboard/Home
+
 - **Purpose**: Main hub showing progress and options
 - **Elements**:
   - Personalized greeting ("Hey, [Name]!")
@@ -71,6 +78,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
 - **Graphics**: Progress circles, achievement icons, encouraging illustrations
 
 #### 3. Practice Test Mode
+
 - **Purpose**: Present questions with immediate feedback
 - **Question Display**:
   - Question counter (e.g., "Question 12 of 35")
@@ -92,6 +100,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
   - Option to pause/exit (saves progress)
 
 #### 4. Answer Feedback Screen
+
 - **Correct Answer**:
   - Celebratory animation (confetti, stars)
   - Encouraging message ("Excellent!", "You got it!", "Perfect!")
@@ -105,6 +114,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
   - Reassurance that they'll see it again
 
 #### 5. Review Missed Questions Mode
+
 - **Purpose**: Focused practice on previously missed questions
 - **Elements**:
   - Special header ("Let's Master These Questions!")
@@ -118,6 +128,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
   - Re-adds to queue if answered incorrectly again
 
 #### 6. Test Complete Summary
+
 - **Purpose**: Show results and encourage continued practice
 - **Elements**:
   - Score summary (e.g., "32/35 correct - 91%")
@@ -131,6 +142,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
 - **Graphics**: Performance visualization, achievement celebration
 
 #### 7. Settings/Profile
+
 - **Purpose**: User preferences and data management
 - **Elements**:
   - Change name
@@ -143,7 +155,7 @@ A mobile-friendly, interactive practice test website for the Illinois driver's l
 
 ### Local Storage Schema
 
-```javascript
+```js
 // User Profile
 user: {
   name: string,
@@ -199,6 +211,7 @@ stats: {
 ## Technical Implementation
 
 ### Technology Stack
+
 - **HTML5**: Semantic markup
 - **CSS3**:
   - CSS Grid and Flexbox for layout
@@ -213,7 +226,8 @@ stats: {
 - **Service Worker** (optional): For offline capability
 
 ### File Structure
-```
+
+```text
 /
 ├── index.html                 # Entry point
 ├── css/
@@ -240,6 +254,7 @@ stats: {
 ### Key JavaScript Modules
 
 #### 1. Storage Manager (`storage.js`)
+
 - Load/save user profile
 - Load/save question history
 - Load/save statistics
@@ -247,6 +262,7 @@ stats: {
 - Data migration/versioning
 
 #### 2. Question Manager (`questions.js`)
+
 - Load questions from JSON
 - Filter by category
 - Filter by mastery status
@@ -255,6 +271,7 @@ stats: {
 - Track question state
 
 #### 3. Quiz Controller (`quiz.js`)
+
 - Initialize test session
 - Track current question
 - Process answers
@@ -263,6 +280,7 @@ stats: {
 - Manage mastery logic (consecutive correct tracking)
 
 #### 4. UI Manager (`ui.js`)
+
 - Render screens
 - Update progress indicators
 - Display questions
@@ -271,6 +289,7 @@ stats: {
 - Handle user input
 
 #### 5. Animation Controller (`animations.js`)
+
 - Trigger celebration effects
 - Answer feedback animations
 - Transition effects
@@ -279,14 +298,18 @@ stats: {
 ## Feature Specifications
 
 ### 1. First-Time User Experience
+
 **Flow**:
+
 1. User lands on welcome screen
 2. Friendly message: "Welcome to the Illinois Driver's Test Prep!"
 3. Input field: "What's your first name?"
 4. Submit → Save to Local Storage → Navigate to Dashboard
 
 ### 2. Question Selection Logic
+
 **Practice Mode**:
+
 - Select 35 questions (matching actual test length)
 - Prioritize questions with fewer attempts
 - Include mix of categories
@@ -294,19 +317,23 @@ stats: {
 - Randomize order
 
 **Review Mode**:
+
 - Show only questions with incorrectCount > 0 AND mastered = false
 - Order by mostRecent failures first (or random)
 - Continue until queue is empty or user exits
 
 ### 3. Mastery System
+
 **Criteria for Mastery**:
+
 - Question must be answered correctly 2-3 times consecutively
 - Counter resets to 0 on any incorrect answer
 - Once mastered, question can be excluded from future tests (user setting)
 - Visual celebration when question is mastered
 
 **Example Logic**:
-```javascript
+
+```js
 // After answering a question correctly
 if (questionHistory[id].consecutiveCorrect >= 2) {
   questionHistory[id].mastered = true;
@@ -321,6 +348,7 @@ questionHistory[id].mastered = false;
 ### 4. Progress Tracking
 
 **Real-time Stats**:
+
 - Overall accuracy percentage
 - Questions attempted vs. total (100)
 - Questions mastered count
@@ -328,6 +356,7 @@ questionHistory[id].mastered = false;
 - Category breakdown
 
 **Historical Data**:
+
 - Total tests taken
 - Best score
 - Longest streak
@@ -336,18 +365,21 @@ questionHistory[id].mastered = false;
 ### 5. Mobile Optimizations
 
 **Touch Interactions**:
+
 - Large tap targets (min 44x44px)
 - Visual tap feedback (scale, ripple effect)
 - Swipe gesture for next question (optional)
 - Pull-to-refresh on dashboard
 
 **Performance**:
+
 - Lazy load images
 - Debounced scroll listeners
 - Minimal reflows/repaints
 - Optimized animations (transform, opacity only)
 
 **Responsive Layout**:
+
 - Single column on mobile
 - Readable font sizes (16px minimum)
 - Fixed bottom navigation for actions
@@ -356,11 +388,13 @@ questionHistory[id].mastered = false;
 ### 6. Encouraging UX Elements
 
 **Messages**:
+
 - Correct answers: "Excellent!", "You're on fire!", "Perfect!", "Great job, [Name]!"
 - Incorrect answers: "Not quite, but you're learning!", "Close! Let's review this.", "You'll get it next time!"
 - Milestones: "10 in a row - you're crushing it!", "50 questions mastered!", "Perfect score!"
 
 **Visual Rewards**:
+
 - Animated checkmarks for correct answers
 - Confetti burst for streaks/milestones
 - Progress bars that fill with gradient colors
@@ -368,6 +402,7 @@ questionHistory[id].mastered = false;
 - Star ratings for categories
 
 **Color Psychology**:
+
 - Green: Correct answers, mastery, progress
 - Red (soft): Incorrect answers (not harsh)
 - Blue: Navigation, trust, information
@@ -377,12 +412,14 @@ questionHistory[id].mastered = false;
 ## GitHub Pages Setup
 
 ### Deployment
+
 1. Create GitHub repository: `il-driver-test-prep`
 2. Enable GitHub Pages in repository settings
 3. Set source to `main` branch, root directory
 4. Site will be available at: `https://[username].github.io/il-driver-test-prep/`
 
 ### Configuration
+
 - No build process needed (pure static site)
 - Include `404.html` for single-page app routing
 - Optional: Custom domain setup
@@ -391,6 +428,7 @@ questionHistory[id].mastered = false;
 ## Development Phases
 
 ### Phase 1: Core Structure (MVP)
+
 - [ ] Create HTML structure for all screens
 - [ ] Implement CSS layout and basic styling
 - [ ] Set up Local Storage functions
@@ -402,6 +440,7 @@ questionHistory[id].mastered = false;
 **Goal**: Functional practice test with score tracking
 
 ### Phase 2: Missed Questions System
+
 - [ ] Track incorrect answers in Local Storage
 - [ ] Build missed questions queue
 - [ ] Implement review mode
@@ -412,6 +451,7 @@ questionHistory[id].mastered = false;
 **Goal**: Complete remediation system
 
 ### Phase 3: Polish & Personality
+
 - [ ] Add animations for feedback
 - [ ] Implement celebration effects
 - [ ] Create encouraging messages system
@@ -422,6 +462,7 @@ questionHistory[id].mastered = false;
 **Goal**: Warm, fun, engaging experience
 
 ### Phase 4: Statistics & Settings
+
 - [ ] Build comprehensive dashboard
 - [ ] Category breakdown displays
 - [ ] Settings page
@@ -432,6 +473,7 @@ questionHistory[id].mastered = false;
 **Goal**: Complete feature set
 
 ### Phase 5: Testing & Optimization
+
 - [ ] Cross-browser testing
 - [ ] Mobile device testing
 - [ ] Performance optimization
@@ -442,6 +484,7 @@ questionHistory[id].mastered = false;
 **Goal**: Production-ready application
 
 ## Success Metrics
+
 - User completes at least one full practice test
 - Missed questions are successfully reviewed and mastered
 - Mobile experience feels native and responsive
@@ -450,6 +493,7 @@ questionHistory[id].mastered = false;
 - Zero API calls or backend dependencies
 
 ## Future Enhancements (Post-MVP)
+
 - Timer mode (practice under time pressure)
 - Study guide/flashcard mode
 - Spaced repetition algorithm for review
@@ -462,6 +506,7 @@ questionHistory[id].mastered = false;
 - Comparison to statewide pass rates
 
 ## Accessibility Considerations
+
 - Semantic HTML throughout
 - ARIA labels where needed
 - Keyboard navigation support
@@ -472,6 +517,7 @@ questionHistory[id].mastered = false;
 - Captions for any videos/audio
 
 ## Browser Support
+
 - **Primary**: iOS Safari, Chrome Mobile, Samsung Internet
 - **Secondary**: Desktop Chrome, Firefox, Safari, Edge
 - **Minimum**: ES6 support, Local Storage API
@@ -504,6 +550,7 @@ questionHistory[id].mastered = false;
 Once approved, development will begin with Phase 1 (MVP) focusing on core functionality. The modular structure allows for iterative development, with each phase building on the previous one.
 
 **Estimated Timeline**:
+
 - Phase 1 (MVP): 2-3 days
 - Phase 2 (Remediation): 1-2 days
 - Phase 3 (Polish): 2-3 days
