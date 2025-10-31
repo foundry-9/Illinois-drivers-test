@@ -6,62 +6,90 @@
 const Theme = (() => {
   const THEME_KEY = 'theme-preference';
   const DARK_MODE_CLASS = 'dark-mode';
+  let initialized = false;
 
   /**
    * Initialize theme system
    * Detects system preference and applies saved user preference
    */
   const init = () => {
+    // Only run full initialization once
+    if (!initialized) {
+      applyTheme();
+
+      // Listen for system theme changes
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          // Only apply if user hasn't manually set a preference
+          if (!localStorage.getItem(THEME_KEY)) {
+            if (e.matches) {
+              enableDarkMode();
+            } else {
+              disableDarkMode();
+            }
+          }
+        });
+      }
+
+      initialized = true;
+    }
+
+    // Always update listeners when screens change
+    setupThemeToggleListeners();
+  };
+
+  /**
+   * Apply saved theme or system preference
+   */
+  const applyTheme = () => {
     const savedTheme = localStorage.getItem(THEME_KEY);
 
     if (savedTheme) {
       // User has a saved preference
       if (savedTheme === 'dark') {
-        enableDarkMode();
+        applyDarkMode();
       } else {
-        disableDarkMode();
+        applyLightMode();
       }
     } else {
       // No saved preference, use system preference
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        enableDarkMode();
+        applyDarkMode();
       } else {
-        disableDarkMode();
+        applyLightMode();
       }
     }
-
-    // Listen for system theme changes
-    if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        // Only apply if user hasn't manually set a preference
-        if (!localStorage.getItem(THEME_KEY)) {
-          if (e.matches) {
-            enableDarkMode();
-          } else {
-            disableDarkMode();
-          }
-        }
-      });
-    }
-
-    setupThemeToggleListeners();
   };
 
   /**
-   * Enable dark mode
+   * Apply dark mode without saving preference (internal use)
    */
-  const enableDarkMode = () => {
+  const applyDarkMode = () => {
     document.documentElement.classList.add(DARK_MODE_CLASS);
     updateThemeToggleButtons('☀️'); // Show sun icon when dark mode is on
+  };
+
+  /**
+   * Apply light mode without saving preference (internal use)
+   */
+  const applyLightMode = () => {
+    document.documentElement.classList.remove(DARK_MODE_CLASS);
+    updateThemeToggleButtons('🌙'); // Show moon icon when light mode is on
+  };
+
+  /**
+   * Enable dark mode and save preference
+   */
+  const enableDarkMode = () => {
+    applyDarkMode();
     localStorage.setItem(THEME_KEY, 'dark');
   };
 
   /**
-   * Disable dark mode (light mode)
+   * Disable dark mode (light mode) and save preference
    */
   const disableDarkMode = () => {
-    document.documentElement.classList.remove(DARK_MODE_CLASS);
-    updateThemeToggleButtons('🌙'); // Show moon icon when light mode is on
+    applyLightMode();
     localStorage.setItem(THEME_KEY, 'light');
   };
 
@@ -82,7 +110,9 @@ const Theme = (() => {
   const updateThemeToggleButtons = (icon) => {
     const buttons = document.querySelectorAll('[id*="themeToggle"]');
     buttons.forEach(btn => {
-      btn.textContent = icon;
+      if (btn) {
+        btn.textContent = icon;
+      }
     });
   };
 
@@ -92,9 +122,10 @@ const Theme = (() => {
   const setupThemeToggleListeners = () => {
     const themeToggleBtns = document.querySelectorAll('[id*="themeToggle"]');
     themeToggleBtns.forEach(btn => {
-      if (btn && !btn.dataset.themeListenerSet) {
-        btn.onclick = toggleTheme;
-        btn.dataset.themeListenerSet = 'true';
+      if (btn) {
+        // Use addEventListener to ensure proper mobile Safari support
+        btn.removeEventListener('click', toggleTheme);
+        btn.addEventListener('click', toggleTheme, false);
       }
     });
   };
@@ -112,7 +143,8 @@ const Theme = (() => {
     toggleTheme,
     isDarkMode,
     enableDarkMode,
-    disableDarkMode
+    disableDarkMode,
+    applyTheme
   };
 })();
 
