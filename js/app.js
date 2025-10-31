@@ -107,6 +107,11 @@ const App = (() => {
         setupSettingsListeners();
       };
     }
+
+    // Reinitialize theme toggle listeners
+    if (Theme && Theme.init) {
+      Theme.init();
+    }
   };
 
   /**
@@ -193,6 +198,11 @@ const App = (() => {
         UI.showDashboard();
         setupDashboardListeners();
       };
+    }
+
+    // Reinitialize theme toggle listeners
+    if (Theme && Theme.init) {
+      Theme.init();
     }
   };
 

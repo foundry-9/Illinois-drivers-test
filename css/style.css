@@ -58,6 +58,26 @@
   --transition-slow: 350ms ease-in-out;
 }
 
+/* Dark mode theme */
+:root.dark-mode {
+  --text-primary: #E0E0E0;
+  --text-secondary: #A0A0A0;
+  --text-light: #616161;
+
+  --bg-primary: #121212;
+  --bg-secondary: #1E1E1E;
+  --bg-tertiary: #2A2A2A;
+
+  --correct-bg: #1B5E20;
+  --error-bg: #B71C1C;
+
+  /* Adjust shadows for dark mode */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 8px 24px rgba(0, 0, 0, 0.8);
+}
+
 /* ============================================
    Reset & Base Styles
    ============================================ */
@@ -79,6 +99,7 @@ body {
   background-color: var(--bg-secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
 /* ============================================
@@ -284,37 +305,49 @@ body {
 .btn-primary {
   background-color: var(--primary-color);
   color: white;
+  border: 2px solid var(--primary-color);
+  font-weight: 700;
 }
 
 .btn-primary:hover:not(:disabled) {
   background-color: #1976D2;
+  border-color: #1976D2;
 }
 
 .btn-secondary {
   background-color: var(--secondary-color);
   color: white;
+  border: 2px solid var(--secondary-color);
+  font-weight: 700;
 }
 
 .btn-secondary:hover:not(:disabled) {
   background-color: #388E3C;
+  border-color: #388E3C;
 }
 
 .btn-tertiary {
   background-color: var(--bg-secondary);
   color: var(--text-primary);
+  border: 2px solid var(--bg-tertiary);
+  font-weight: 700;
 }
 
 .btn-tertiary:hover:not(:disabled) {
   background-color: var(--bg-tertiary);
+  border-color: #1976D2;
 }
 
 .btn-danger {
   background-color: var(--error-color);
   color: white;
+  border: 2px solid var(--error-color);
+  font-weight: 700;
 }
 
 .btn-danger:hover:not(:disabled) {
   background-color: #d32f2f;
+  border-color: #d32f2f;
 }
 
 .btn-large {
@@ -354,10 +387,17 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: var(--shadow-md);
+  gap: var(--spacing-md);
 }
 
 .dashboard-header h1 {
   font-size: var(--font-size-2xl);
+}
+
+.header-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
 }
 
 .dashboard-main {
@@ -807,6 +847,7 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: var(--shadow-md);
+  gap: var(--spacing-md);
 }
 
 .settings-header h1 {

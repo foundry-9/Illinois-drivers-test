@@ -71,7 +71,10 @@
     <div data-screen="dashboard" class="screen dashboard-screen hidden">
       <header class="dashboard-header">
         <h1 id="greeting">Welcome back!</h1>
-        <button id="settingsBtn" class="btn-icon">⚙️</button>
+        <div class="header-buttons">
+          <button id="themeToggleBtn" class="btn-icon" title="Toggle dark mode">🌙</button>
+          <button id="settingsBtn" class="btn-icon">⚙️</button>
+        </div>
       </header>
 
       <main class="dashboard-main">
@@ -237,7 +240,10 @@
     <div data-screen="settings" class="screen settings-screen hidden">
       <header class="settings-header">
         <h1>Settings ⚙️</h1>
-        <button id="backBtn" class="btn-icon">←</button>
+        <div class="header-buttons">
+          <button id="themeToggleBtnSettings" class="btn-icon" title="Toggle dark mode">🌙</button>
+          <button id="backBtn" class="btn-icon">←</button>
+        </div>
       </header>
 
       <main class="settings-main">
@@ -290,6 +296,7 @@
   </div>
 
   <!-- JavaScript Modules -->
+  <script src="./js/theme.js"></script>
   <script src="./js/storage.js"></script>
   <script src="./js/questions.js"></script>
   <script src="./js/quiz.js"></script>
