@@ -436,10 +436,11 @@ body {
 
 .stat-label {
   font-size: var(--font-size-sm);
-  color: var(--text-secondary);
+  color: #666666;
   margin-bottom: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
 .stat-value {
@@ -485,7 +486,8 @@ body {
 
 .progress-text {
   font-size: var(--font-size-sm);
-  color: var(--text-secondary);
+  color: #666666;
+  font-weight: 500;
 }
 
 .actions-section {
@@ -517,12 +519,12 @@ body {
 }
 
 .category-name {
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: var(--spacing-sm);
   font-size: var(--font-size-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--text-secondary);
+  color: #555555;
 }
 
 .category-progress {
@@ -545,14 +547,15 @@ body {
 }
 
 .category-percent {
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--font-size-sm);
-  color: var(--primary-color);
+  color: #1565C0;
 }
 
 .category-details {
   font-size: var(--font-size-xs);
-  color: var(--text-secondary);
+  color: #666666;
+  font-weight: 500;
 }
 
 /* ============================================
@@ -797,7 +800,8 @@ body {
 
 .result-message {
   font-size: var(--font-size-base);
-  color: var(--text-secondary);
+  color: #666666;
+  font-weight: 500;
 }
 
 .category-breakdown-section {
@@ -833,7 +837,8 @@ body {
 }
 
 .category-result span:last-child {
-  color: var(--text-secondary);
+  color: #666666;
+  font-weight: 500;
 }
 
 .complete-actions {
@@ -881,7 +886,8 @@ body {
 .settings-section.info-section p {
   margin-bottom: var(--spacing-md);
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: #666666;
+  font-weight: 500;
 }
 
 .settings-section a {
@@ -1060,4 +1066,40 @@ body.dark-mode .btn-icon {
 html.dark-mode .btn-icon:hover,
 body.dark-mode .btn-icon:hover {
   background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Dark mode contrast fixes for secondary text */
+html.dark-mode .stat-label,
+body.dark-mode .stat-label {
+  color: #B0B0B0;
+}
+
+html.dark-mode .progress-text,
+body.dark-mode .progress-text {
+  color: #B0B0B0;
+}
+
+html.dark-mode .category-name,
+body.dark-mode .category-name {
+  color: #C0C0C0;
+}
+
+html.dark-mode .category-details,
+body.dark-mode .category-details {
+  color: #B0B0B0;
+}
+
+html.dark-mode .result-message,
+body.dark-mode .result-message {
+  color: #B0B0B0;
+}
+
+html.dark-mode .category-result span:last-child,
+body.dark-mode .category-result span:last-child {
+  color: #B0B0B0;
+}
+
+html.dark-mode .settings-section.info-section p,
+body.dark-mode .settings-section.info-section p {
+  color: #B0B0B0;
 }
