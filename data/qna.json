@@ -1,0 +1,1231 @@
+{
+  "illinois_permit_test_questions": [
+    {
+      "id": 1,
+      "category": "Age Requirements",
+      "question": "What is the minimum age to obtain a driver's license in Illinois?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 15 years old",
+        "b) 16 years old",
+        "c) 17 years old",
+        "d) 18 years old"
+      ],
+      "correct_answer": "b",
+      "explanation": "You must be at least age 16 to obtain an Illinois driver's license."
+    },
+    {
+      "id": 2,
+      "category": "Instruction Permit",
+      "question": "For how long must a driver under age 18 hold their instruction permit before obtaining a driver's license?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 3 months",
+        "b) 6 months",
+        "c) 9 months",
+        "d) 12 months"
+      ],
+      "correct_answer": "c",
+      "explanation": "Drivers under age 18 must hold their instruction permit for at least nine consecutive months."
+    },
+    {
+      "id": 3,
+      "category": "Practice Driving",
+      "question": "Illinois drivers under age 18 are required to have at least how many hours of behind-the-wheel supervised driving before obtaining their driver's license?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 30 hours",
+        "b) 40 hours",
+        "c) 50 hours",
+        "d) 60 hours"
+      ],
+      "correct_answer": "c",
+      "explanation": "50 hours of behind-the-wheel supervised driving, including 10 hours of nighttime driving."
+    },
+    {
+      "id": 4,
+      "category": "Teen Driving",
+      "question": "During the Initial Licensing Phase, a teen driver is allowed only two passengers under age 20 in the vehicle during the first 12 months of licensing.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "For the first 12 months, only one passenger under age 20 is allowed, unless they are siblings or stepchildren."
+    },
+    {
+      "id": 5,
+      "category": "DUI Laws",
+      "question": "What is the legal blood-alcohol concentration (BAC) limit for drivers age 21 and over in Illinois?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 0.05%",
+        "b) 0.08%",
+        "c) 0.10%",
+        "d) 0.12%"
+      ],
+      "correct_answer": "b",
+      "explanation": "It is illegal to drive if your BAC is .08% or more."
+    },
+    {
+      "id": 6,
+      "category": "DUI Laws",
+      "question": "If arrested with a blood-alcohol concentration of .08% or more, an individual's driving privileges will be suspended for at least:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Three months",
+        "b) Six months",
+        "c) Nine months",
+        "d) One year"
+      ],
+      "correct_answer": "b",
+      "explanation": "Six months for a first offense."
+    },
+    {
+      "id": 7,
+      "category": "DUI Laws",
+      "question": "If a driver refuses to submit to chemical testing for alcohol/drugs, their driving privileges will be suspended for:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Three months",
+        "b) Six months",
+        "c) One year",
+        "d) Two years"
+      ],
+      "correct_answer": "c",
+      "explanation": "One year for first-time offenders who refuse chemical testing."
+    },
+    {
+      "id": 8,
+      "category": "Under 21 DUI",
+      "question": "It is illegal for persons under age 21 to drive with any trace of alcohol or drugs in their systems.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Zero tolerance law applies to drivers under 21."
+    },
+    {
+      "id": 9,
+      "category": "Speed Limits",
+      "question": "Unless otherwise posted, what is the speed limit on Illinois interstates and tollways?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 55 mph",
+        "b) 65 mph",
+        "c) 70 mph",
+        "d) 75 mph"
+      ],
+      "correct_answer": "c",
+      "explanation": "70 mph on interstates and tollways unless otherwise posted."
+    },
+    {
+      "id": 10,
+      "category": "Speed Limits",
+      "question": "What is the speed limit in school zones on school days when children are present and signs are posted?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 15 mph",
+        "b) 20 mph",
+        "c) 25 mph",
+        "d) 30 mph"
+      ],
+      "correct_answer": "b",
+      "explanation": "20 mph between 6:30 a.m. and 4 p.m. when children are present."
+    },
+    {
+      "id": 11,
+      "category": "Speed Limits",
+      "question": "What is the speed limit in city/town areas unless otherwise posted?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 20 mph",
+        "b) 25 mph",
+        "c) 30 mph",
+        "d) 35 mph"
+      ],
+      "correct_answer": "c",
+      "explanation": "30 mph in city/town areas unless otherwise posted."
+    },
+    {
+      "id": 12,
+      "category": "Speed Limits",
+      "question": "What is the speed limit in alleys?",
+      "type": "multiple_choice",
+      "options": [
+        "a) 10 mph",
+        "b) 15 mph",
+        "c) 20 mph",
+        "d) 25 mph"
+      ],
+      "correct_answer": "b",
+      "explanation": "15 mph in alleys."
+    },
+    {
+      "id": 13,
+      "category": "School Buses",
+      "question": "When on a two-lane roadway, drivers must stop their vehicles when approaching a stopped school bus with its red warning lights flashing and its stop signal arm extended.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "You must stop before meeting or overtaking a stopped school bus loading or unloading passengers."
+    },
+    {
+      "id": 14,
+      "category": "School Buses",
+      "question": "What is the penalty for being convicted of illegally passing a stopped school bus?",
+      "type": "multiple_choice",
+      "options": [
+        "a) A $30 fine",
+        "b) A suspension of the vehicle registration",
+        "c) A suspension of driving privileges",
+        "d) Community service only"
+      ],
+      "correct_answer": "c",
+      "explanation": "A conviction results in suspension of your driver's license and a mandatory fine of $300."
+    },
+    {
+      "id": 15,
+      "category": "Railroad Crossings",
+      "question": "All vehicles are required to stop within how many feet of the nearest rail of a railroad crossing when a train is approaching?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Between 5 and 10 feet",
+        "b) 10 feet",
+        "c) Between 15 and 50 feet",
+        "d) 100 feet"
+      ],
+      "correct_answer": "c",
+      "explanation": "You must stop within 15-50 feet of the railroad crossing."
+    },
+    {
+      "id": 16,
+      "category": "Distracted Driving",
+      "question": "Illinois law prohibits the use of handheld cellphones while driving. Hands-free devices are allowed for persons age:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 16 and older",
+        "b) 18 and older",
+        "c) 19 and older",
+        "d) 21 and older"
+      ],
+      "correct_answer": "c",
+      "explanation": "Hands-free devices are allowed for persons age 19 and older."
+    },
+    {
+      "id": 17,
+      "category": "Right of Way",
+      "question": "After making a proper stop and yielding to traffic or pedestrians within the intersection, it is permissible for drivers on a one-way street to turn left at a red light onto another one-way street that moves traffic to the left.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "This is allowed after a complete stop and yielding to all traffic and pedestrians."
+    },
+    {
+      "id": 18,
+      "category": "Right of Way",
+      "question": "How should a driver proceed if within an intersection waiting to make a left turn and the traffic signal light turns red?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Wait in the intersection until the light turns green",
+        "b) Yield to oncoming traffic and complete the turn",
+        "c) Make sure it is clear, then back up from the intersection",
+        "d) Honk to alert other drivers"
+      ],
+      "correct_answer": "b",
+      "explanation": "If you enter an intersection while the light is green, you may finish the turn even though the light turns red."
+    },
+    {
+      "id": 19,
+      "category": "Passing",
+      "question": "When passing another vehicle, a driver should wait until the entire car the driver just passed is visible in the rearview mirror before turning back into the right-hand lane.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "This ensures safe distance when returning to the right lane."
+    },
+    {
+      "id": 20,
+      "category": "Passing",
+      "question": "A driver may pass another vehicle by driving on the shoulder of the road.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "Driving off the pavement or main traveled part of the road is not allowed when passing."
+    },
+    {
+      "id": 21,
+      "category": "Passing",
+      "question": "It is permissible to pass on a two-lane, two-way roadway within 100 feet of an intersection or railroad crossing.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "Passing is not allowed within 100 feet of an intersection or railroad crossing."
+    },
+    {
+      "id": 22,
+      "category": "Turn Signals",
+      "question": "For what distance should a continuous turn signal be given when making a left or right turn in a business or residential district?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Not less than 50 feet before turning",
+        "b) Not less than 75 feet before turning",
+        "c) Not less than 100 feet before turning",
+        "d) Not less than 200 feet before turning"
+      ],
+      "correct_answer": "c",
+      "explanation": "In business or residential areas, signal at least 100 feet before turning."
+    },
+    {
+      "id": 23,
+      "category": "Emergency Vehicles",
+      "question": "When an authorized vehicle using its sirens and flashing lights approaches a vehicle, the driver should pull to the right-hand edge of the roadway and wait for the emergency vehicle to pass.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Illinois law requires motorists to immediately pull to the right and allow emergency vehicles to pass."
+    },
+    {
+      "id": 24,
+      "category": "Construction Zones",
+      "question": "What should drivers do when approaching a construction area?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Increase their speed to get out of the way quickly",
+        "b) Slow down, stop all wireless telephone communications, and yield the right of way",
+        "c) Honk their horn several times to alert workers",
+        "d) Change lanes immediately"
+      ],
+      "correct_answer": "b",
+      "explanation": "Drivers must slow down, discontinue wireless/cellphone use, and yield to workers and vehicles."
+    },
+    {
+      "id": 25,
+      "category": "Pedestrians",
+      "question": "Drivers must yield to pedestrians in an unmarked crosswalk.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Drivers must yield when a pedestrian is in an unmarked crosswalk on the driver's side of the roadway."
+    },
+    {
+      "id": 26,
+      "category": "Safety Belts",
+      "question": "Illinois law requires all drivers and passengers age ___ and older to wear safety belts.",
+      "type": "multiple_choice",
+      "options": [
+        "a) 6",
+        "b) 8",
+        "c) 12",
+        "d) 16"
+      ],
+      "correct_answer": "b",
+      "explanation": "All drivers and passengers age 8 and older must wear safety belts."
+    },
+    {
+      "id": 27,
+      "category": "Child Safety",
+      "question": "Children must be properly secured in a rear-facing child restraint system until age 2 unless they weigh more than ___ pounds or are more than ___ inches tall.",
+      "type": "multiple_choice",
+      "options": [
+        "a) 30 pounds, 35 inches",
+        "b) 35 pounds, 38 inches",
+        "c) 40 pounds, 40 inches",
+        "d) 45 pounds, 42 inches"
+      ],
+      "correct_answer": "c",
+      "explanation": "40 pounds or 40 inches tall are the exceptions to the rear-facing until age 2 requirement."
+    },
+    {
+      "id": 28,
+      "category": "Parking",
+      "question": "Only vehicles displaying special plates or parking placards for persons with disabilities may park in spaces reserved for them by an official PARKING FOR PERSONS WITH DISABILITIES sign.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "These spaces are reserved exclusively for vehicles with proper permits."
+    },
+    {
+      "id": 29,
+      "category": "Parking",
+      "question": "How far from a fire hydrant is parking prohibited?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Within 10 feet",
+        "b) Within 15 feet",
+        "c) Within 20 feet",
+        "d) Within 30 feet"
+      ],
+      "correct_answer": "b",
+      "explanation": "Standing or parking is prohibited within 15 feet of a fire hydrant."
+    },
+    {
+      "id": 30,
+      "category": "Parking",
+      "question": "How far from a STOP sign, YIELD sign, or traffic control signal is parking prohibited?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Within 15 feet",
+        "b) Within 20 feet",
+        "c) Within 30 feet",
+        "d) Within 50 feet"
+      ],
+      "correct_answer": "c",
+      "explanation": "Parking is prohibited within 30 feet of these traffic control devices."
+    },
+    {
+      "id": 31,
+      "category": "Parking",
+      "question": "How far from the nearest rail of a railroad crossing is parking prohibited?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Within 20 feet",
+        "b) Within 30 feet",
+        "c) Within 40 feet",
+        "d) Within 50 feet"
+      ],
+      "correct_answer": "d",
+      "explanation": "Parking is prohibited within 50 feet of the nearest rail of a railroad crossing."
+    },
+    {
+      "id": 32,
+      "category": "Law Enforcement",
+      "question": "After being pulled over by law enforcement, a driver should immediately exit the vehicle and quickly approach the officer's squad car.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "Stay in the vehicle with hands on the steering wheel unless asked to exit."
+    },
+    {
+      "id": 33,
+      "category": "Law Enforcement",
+      "question": "If drivers need to obtain insurance or vehicle registration information from the glove box, they should inform the police officer before doing so.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Always inform the officer before reaching for documents."
+    },
+    {
+      "id": 34,
+      "category": "Bicycles",
+      "question": "When passing a bicyclist, motorists must leave at least ___ feet of passing space.",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1 foot",
+        "b) 2 feet",
+        "c) 3 feet",
+        "d) 5 feet"
+      ],
+      "correct_answer": "c",
+      "explanation": "Maintain a minimum distance of 3 feet when passing a bicyclist."
+    },
+    {
+      "id": 35,
+      "category": "Motorcycles",
+      "question": "A driver does not need to allow as much distance when following a motorcycle as when following a car.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "Allow at least 3-4 seconds following distance when behind a motorcycle."
+    },
+    {
+      "id": 36,
+      "category": "Crashes",
+      "question": "Regardless of fault, a crash report must be filed by the driver if the crash involves property damage of more than:",
+      "type": "multiple_choice",
+      "options": [
+        "a) $500",
+        "b) $1,000",
+        "c) $1,500",
+        "d) $2,000"
+      ],
+      "correct_answer": "c",
+      "explanation": "$1,500 or more in property damage (or $500 if uninsured)."
+    },
+    {
+      "id": 37,
+      "category": "Crashes",
+      "question": "A driver has ___ minutes to report a crash after it occurs.",
+      "type": "multiple_choice",
+      "options": [
+        "a) 15",
+        "b) 30",
+        "c) 45",
+        "d) 60"
+      ],
+      "correct_answer": "b",
+      "explanation": "30 minutes to report a crash."
+    },
+    {
+      "id": 38,
+      "category": "License Suspension",
+      "question": "Drivers convicted of a mandatory insurance violation will lose their driving privileges for:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Three months",
+        "b) Six months",
+        "c) One year",
+        "d) Two years"
+      ],
+      "correct_answer": "a",
+      "explanation": "Minimum three months suspension for mandatory insurance violations."
+    },
+    {
+      "id": 39,
+      "category": "License Revocation",
+      "question": "A driver's license may be revoked for:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Leaving the scene of a crash that injured or killed someone",
+        "b) Giving false information to the Secretary of State",
+        "c) Reckless behavior involving a vehicle that leads to injury or death",
+        "d) All of the above"
+      ],
+      "correct_answer": "d",
+      "explanation": "All listed offenses can result in license revocation."
+    },
+    {
+      "id": 40,
+      "category": "Signs",
+      "question": "An eight-sided red sign means:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Yield",
+        "b) Stop",
+        "c) Railroad crossing",
+        "d) School zone"
+      ],
+      "correct_answer": "b",
+      "explanation": "The octagonal red sign is a STOP sign."
+    },
+    {
+      "id": 41,
+      "category": "Signs",
+      "question": "A three-sided (triangular) sign means:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Stop",
+        "b) Yield",
+        "c) No passing zone",
+        "d) School crossing"
+      ],
+      "correct_answer": "b",
+      "explanation": "The triangular sign is a YIELD sign."
+    },
+    {
+      "id": 42,
+      "category": "Signs",
+      "question": "What color are warning signs typically?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Red",
+        "b) Blue",
+        "c) Yellow",
+        "d) Green"
+      ],
+      "correct_answer": "c",
+      "explanation": "Yellow is used for warning signs."
+    },
+    {
+      "id": 43,
+      "category": "Signs",
+      "question": "What color are guide signs that tell you where you are and which way to go?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Yellow",
+        "b) Orange",
+        "c) Brown",
+        "d) Green"
+      ],
+      "correct_answer": "d",
+      "explanation": "Green is used for guide signs showing directions and distances."
+    },
+    {
+      "id": 44,
+      "category": "Signs",
+      "question": "Orange signs indicate:",
+      "type": "multiple_choice",
+      "options": [
+        "a) School zones",
+        "b) Construction or maintenance zones",
+        "c) Parks and recreation",
+        "d) Services"
+      ],
+      "correct_answer": "b",
+      "explanation": "Orange is used for construction and maintenance zone warning signs."
+    },
+    {
+      "id": 45,
+      "category": "Traffic Signals",
+      "question": "A flashing red signal means:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Slow down and proceed with caution",
+        "b) Stop and wait for green",
+        "c) Stop and proceed when safe",
+        "d) Speed up to clear the intersection"
+      ],
+      "correct_answer": "c",
+      "explanation": "A flashing red signal means stop completely, then proceed when safe like a stop sign."
+    },
+    {
+      "id": 46,
+      "category": "Traffic Signals",
+      "question": "A flashing yellow signal means:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Stop",
+        "b) Speed up",
+        "c) Slow down and proceed with caution",
+        "d) Prepare to stop"
+      ],
+      "correct_answer": "c",
+      "explanation": "A flashing yellow signal means slow down and proceed with caution."
+    },
+    {
+      "id": 47,
+      "category": "Pavement Markings",
+      "question": "Solid yellow lines on a two-lane road indicate:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Passing is allowed",
+        "b) No passing zones",
+        "c) Lane changes permitted",
+        "d) Construction zone"
+      ],
+      "correct_answer": "b",
+      "explanation": "Solid yellow lines mark no passing zones."
+    },
+    {
+      "id": 48,
+      "category": "Following Distance",
+      "question": "In normal conditions, you should maintain at least a ___-second following distance.",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1",
+        "b) 2",
+        "c) 3",
+        "d) 5"
+      ],
+      "correct_answer": "c",
+      "explanation": "Maintain at least a 3-second following distance under normal conditions."
+    },
+    {
+      "id": 49,
+      "category": "Weather",
+      "question": "When driving in fog, you should use:",
+      "type": "multiple_choice",
+      "options": [
+        "a) High beam headlights",
+        "b) Low beam headlights",
+        "c) Parking lights only",
+        "d) No lights"
+      ],
+      "correct_answer": "b",
+      "explanation": "Use low beam headlights in fog; high beams reflect off fog and reduce visibility."
+    },
+    {
+      "id": 50,
+      "category": "Equipment",
+      "question": "Which of the following is required equipment on all vehicles?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Horn",
+        "b) Two headlights",
+        "c) Rearview mirror",
+        "d) All of the above"
+      ],
+      "correct_answer": "d",
+      "explanation": "All listed items are required equipment on vehicles."
+    },
+    {
+      "id": 51,
+      "category": "Teen Driving",
+      "question": "A parent or legal guardian may request that the driver's license of a minor be canceled at any time before age 18.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Parents can cancel a minor's license until they turn 18."
+    },
+    {
+      "id": 52,
+      "category": "Teen Driving",
+      "question": "To obtain court supervision for a traffic violation, a minor must appear in court with a parent/legal guardian and attend a traffic safety school.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Both requirements must be met for minors to receive court supervision."
+    },
+    {
+      "id": 53,
+      "category": "Funeral Processions",
+      "question": "Unless authorized to do so, drivers may not break into the line of a funeral procession.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "It is illegal to join or interrupt a funeral procession."
+    },
+    {
+      "id": 54,
+      "category": "Lane Usage",
+      "question": "Slow vehicles should use the left-hand lane except when passing or turning left.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "Slow vehicles should use the RIGHT-hand lane except when passing or turning left."
+    },
+    {
+      "id": 55,
+      "category": "DUI",
+      "question": "A first DUI conviction results in a minimum _____ revocation of driving privileges.",
+      "type": "multiple_choice",
+      "options": [
+        "a) Six-month",
+        "b) One-year",
+        "c) Two-year",
+        "d) Five-year"
+      ],
+      "correct_answer": "b",
+      "explanation": "A first DUI conviction results in a minimum one-year revocation."
+    },
+    {
+      "id": 56,
+      "category": "DUI",
+      "question": "Cannabis may only be transported in a vehicle in a:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Glove compartment",
+        "b) Sealed, odor-proof, and child-resistant container",
+        "c) Trunk",
+        "d) Paper bag"
+      ],
+      "correct_answer": "b",
+      "explanation": "Cannabis must be in a sealed, odor-proof, and child-resistant container."
+    },
+    {
+      "id": 57,
+      "category": "License Renewal",
+      "question": "A standard driver's license is valid for ___ years for most adults.",
+      "type": "multiple_choice",
+      "options": [
+        "a) 2",
+        "b) 3",
+        "c) 4",
+        "d) 5"
+      ],
+      "correct_answer": "c",
+      "explanation": "A driver's license is valid for four years for most adults."
+    },
+    {
+      "id": 58,
+      "category": "License Renewal",
+      "question": "Drivers ages 81-86 receive licenses valid for:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1 year",
+        "b) 2 years",
+        "c) 3 years",
+        "d) 4 years"
+      ],
+      "correct_answer": "b",
+      "explanation": "Drivers ages 81-86 receive licenses valid for two years."
+    },
+    {
+      "id": 59,
+      "category": "License Renewal",
+      "question": "Drivers ages 87 and older must renew their license:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Every 6 months",
+        "b) Annually",
+        "c) Every 2 years",
+        "d) Every 4 years"
+      ],
+      "correct_answer": "b",
+      "explanation": "Drivers 87 and older require annual renewal."
+    },
+    {
+      "id": 60,
+      "category": "Roundabouts",
+      "question": "In a roundabout, traffic travels:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Clockwise",
+        "b) Counter-clockwise",
+        "c) Both directions",
+        "d) Straight through"
+      ],
+      "correct_answer": "b",
+      "explanation": "Traffic travels counter-clockwise in roundabouts."
+    },
+    {
+      "id": 61,
+      "category": "Equipment",
+      "question": "Using headsets while driving is:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Always allowed",
+        "b) Prohibited",
+        "c) Allowed for GPS only",
+        "d) Allowed for music only"
+      ],
+      "correct_answer": "b",
+      "explanation": "Illinois law prohibits the use of headsets while driving (except single-sided with cellphone)."
+    },
+    {
+      "id": 62,
+      "category": "Moving Violations",
+      "question": "A driver under age 21 who is convicted of two or more moving violations within a 24-month period will have their license suspended for at least:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 15 days",
+        "b) 30 days",
+        "c) 60 days",
+        "d) 90 days"
+      ],
+      "correct_answer": "b",
+      "explanation": "Minimum 30-day suspension for two moving violations in 24 months for drivers under 21."
+    },
+    {
+      "id": 63,
+      "category": "Pedestrians",
+      "question": "When approaching a pedestrian with a disability using a guide dog or white cane, a driver should:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Honk to alert them",
+        "b) Speed up to pass quickly",
+        "c) Yield the right of way",
+        "d) Flash headlights"
+      ],
+      "correct_answer": "c",
+      "explanation": "Always yield the right of way to pedestrians with disabilities."
+    },
+    {
+      "id": 64,
+      "category": "Large Vehicles",
+      "question": "When following a truck at night, it is important for drivers to:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Use high beam headlights",
+        "b) Dim their vehicle's headlights",
+        "c) Flash headlights frequently",
+        "d) Follow closely"
+      ],
+      "correct_answer": "b",
+      "explanation": "Always dim headlights when following trucks to avoid blinding the driver in mirrors."
+    },
+    {
+      "id": 65,
+      "category": "Alley/Driveway",
+      "question": "In urban areas, when moving out of an alley, building, private road, or driveway, drivers must come to a complete stop before entering the roadway.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Complete stop required before entering the sidewalk area or roadway."
+    },
+    {
+      "id": 66,
+      "category": "Speed",
+      "question": "Speed should be reduced below the posted speed limit for which of the following reasons?",
+      "type": "multiple_choice",
+      "options": [
+        "a) Driver is driving in unfavorable weather conditions",
+        "b) Driver is approaching and crossing an intersection",
+        "c) Both of the above",
+        "d) None of the above"
+      ],
+      "correct_answer": "c",
+      "explanation": "Reduce speed for both weather conditions and when approaching intersections."
+    },
+    {
+      "id": 67,
+      "category": "Car Doors",
+      "question": "Drivers may open car doors on the side where traffic is moving only when it can be done safely and without interfering with traffic.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Doors may only be opened when safe and should remain open only long enough to load/unload."
+    },
+    {
+      "id": 68,
+      "category": "Right of Way",
+      "question": "A driver may proceed immediately when waiting at an intersection and the traffic signal light turns green.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "Must yield to vehicles still in the intersection even after the light turns green."
+    },
+    {
+      "id": 69,
+      "category": "Railroad",
+      "question": "When approaching a railroad crossing that has no warning signals, a driver should look, listen and slow down.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Always look both ways, listen, and slow down at uncontrolled railroad crossings."
+    },
+    {
+      "id": 70,
+      "category": "Railroad",
+      "question": "After a train clears a crossing that has flashing signals, drivers may proceed after checking for a second train on another track and the lights have stopped flashing.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Always check for additional trains before proceeding."
+    },
+    {
+      "id": 71,
+      "category": "Railroad",
+      "question": "If moving with a stream of vehicles across a railroad track, it is safe to stop on the track for a short period of time.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "Never stop on railroad tracks; ensure there's room on the other side before crossing."
+    },
+    {
+      "id": 72,
+      "category": "Turn Signals",
+      "question": "A driver must give the right- or left-turn signal when changing lanes.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Signals are required for all lane changes."
+    },
+    {
+      "id": 73,
+      "category": "Passing",
+      "question": "It is permissible to make a right turn against a red signal light after stopping and yielding to other vehicles and pedestrians.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Right turn on red is allowed after complete stop and yielding, unless prohibited by sign."
+    },
+    {
+      "id": 74,
+      "category": "Hill Parking",
+      "question": "When parking facing uphill with a curb, turn the front wheels:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Toward the curb",
+        "b) Away from the curb",
+        "c) Straight",
+        "d) Either direction"
+      ],
+      "correct_answer": "b",
+      "explanation": "Turn wheels away from curb when facing uphill with a curb."
+    },
+    {
+      "id": 75,
+      "category": "Hill Parking",
+      "question": "When parking facing downhill, turn the front wheels:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Away from the curb",
+        "b) Toward the curb",
+        "c) Straight",
+        "d) Either direction"
+      ],
+      "correct_answer": "b",
+      "explanation": "Turn wheels toward the curb when facing downhill."
+    },
+    {
+      "id": 76,
+      "category": "License Requirements",
+      "question": "If you permanently move to Illinois from another state, you must obtain an Illinois license within:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 30 days",
+        "b) 60 days",
+        "c) 90 days",
+        "d) 120 days"
+      ],
+      "correct_answer": "c",
+      "explanation": "90 days or before your out-of-state license expires, whichever comes first."
+    },
+    {
+      "id": 77,
+      "category": "Address Change",
+      "question": "You must notify the Secretary of State's office of an address change within:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 5 days",
+        "b) 10 days",
+        "c) 30 days",
+        "d) 60 days"
+      ],
+      "correct_answer": "b",
+      "explanation": "Address changes must be reported within 10 days."
+    },
+    {
+      "id": 78,
+      "category": "Name Change",
+      "question": "If you legally change your name, you must apply for a corrected driver's license within:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 10 days",
+        "b) 20 days",
+        "c) 30 days",
+        "d) 60 days"
+      ],
+      "correct_answer": "c",
+      "explanation": "Name changes must be updated within 30 days."
+    },
+    {
+      "id": 79,
+      "category": "Vision",
+      "question": "The minimum visual acuity requirement for driving is:",
+      "type": "multiple_choice",
+      "options": [
+        "a) 20/20",
+        "b) 20/30",
+        "c) 20/40",
+        "d) 20/50"
+      ],
+      "correct_answer": "c",
+      "explanation": "Minimum visual acuity of 20/40 with or without corrective lenses."
+    },
+    {
+      "id": 80,
+      "category": "Written Test",
+      "question": "You are allowed ___ attempts to pass each exam within one year from the date you paid your application fee.",
+      "type": "multiple_choice",
+      "options": [
+        "a) 1",
+        "b) 2",
+        "c) 3",
+        "d) 5"
+      ],
+      "correct_answer": "c",
+      "explanation": "Three attempts are allowed within one year."
+    },
+    {
+      "id": 81,
+      "category": "Motorcycles",
+      "question": "Motorcyclists are entitled to use the full width of a traffic lane; therefore, a driver should pass a motorcycle the same way a driver would pass another vehicle.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Motorcycles are entitled to the entire lane and should not be shared."
+    },
+    {
+      "id": 82,
+      "category": "Bicycles",
+      "question": "When motorists are turning right and a bicyclist is approaching on the right, they should let the bicyclist go through the intersection first before making a right turn.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Yield to bicyclists when turning right."
+    },
+    {
+      "id": 83,
+      "category": "Dutch Reach",
+      "question": "When opening your driver's side door on a road with oncoming vehicle and bicycle traffic, you should:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Open quickly to minimize time",
+        "b) Open the vehicle door by reaching across with your right hand",
+        "c) Open with left hand only",
+        "d) Never open the door"
+      ],
+      "correct_answer": "b",
+      "explanation": "The 'Dutch Reach' technique helps you see approaching traffic."
+    },
+    {
+      "id": 84,
+      "category": "Alcohol",
+      "question": "Alcohol is the single greatest factor in fatal motor vehicle crashes.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Alcohol is the number one killer on American roadways."
+    },
+    {
+      "id": 85,
+      "category": "Aggravated DUI",
+      "question": "A driver may be charged with Aggravated DUI if they:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Are involved in a DUI crash resulting in death or personal injury",
+        "b) Commit a DUI while driving a school bus",
+        "c) Receive a third or subsequent DUI",
+        "d) All of the above"
+      ],
+      "correct_answer": "d",
+      "explanation": "All listed situations can result in Aggravated DUI charges."
+    },
+    {
+      "id": 86,
+      "category": "DUI Recovery",
+      "question": "Drivers whose licenses have been revoked as a result of DUI must meet several requirements to regain their license, including an evaluation for alcohol and drug problems and paying a reinstatement fee.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Multiple requirements must be met including evaluation, education/treatment, hearing, and fees."
+    },
+    {
+      "id": 87,
+      "category": "Financial Responsibility",
+      "question": "Before drivers can regain driving privileges after losing them for failure to pay for damages caused by a crash, they must file proof of financial responsibility with the Secretary of State's office.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Proof of financial responsibility (SR-22) must be filed."
+    },
+    {
+      "id": 88,
+      "category": "Emergency Response",
+      "question": "Drivers who are involved in or come upon a traffic crash should stop their vehicle in a safe, well-lit public place that does not obstruct traffic if able to do so.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Safety and avoiding traffic obstruction are priorities."
+    },
+    {
+      "id": 89,
+      "category": "License Suspension",
+      "question": "A driver's license may be suspended for all of the following EXCEPT:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Failure to obey a railroad crossing signal",
+        "b) Possessing a fraudulent driver's license",
+        "c) Failure to stop for a school bus",
+        "d) Having one moving violation"
+      ],
+      "correct_answer": "d",
+      "explanation": "One moving violation alone doesn't result in suspension; typically requires three in 12 months."
+    },
+    {
+      "id": 90,
+      "category": "License Cancellation",
+      "question": "A driver's license may be canceled if a driver is found medically or visually unfit to safely operate a vehicle.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Medical unfitness is grounds for license cancellation."
+    },
+    {
+      "id": 91,
+      "category": "Special Permits",
+      "question": "Restricted Driving Permits can be issued to any suspended or revoked driver.",
+      "type": "true_false",
+      "correct_answer": "false",
+      "explanation": "RDPs have specific eligibility requirements and cannot be issued to anyone under 16."
+    },
+    {
+      "id": 92,
+      "category": "Sign Colors",
+      "question": "Blue signs indicate:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Warnings",
+        "b) Construction zones",
+        "c) Services",
+        "d) Regulatory information"
+      ],
+      "correct_answer": "c",
+      "explanation": "Blue signs provide information about services along the roadway."
+    },
+    {
+      "id": 93,
+      "category": "Sign Colors",
+      "question": "Brown signs indicate:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Construction zones",
+        "b) Parks and recreation",
+        "c) Warnings",
+        "d) School zones"
+      ],
+      "correct_answer": "b",
+      "explanation": "Brown is used for parks and recreation signs."
+    },
+    {
+      "id": 94,
+      "category": "Round Signs",
+      "question": "A round sign indicates:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Stop ahead",
+        "b) Yield ahead",
+        "c) Railroad crossing ahead",
+        "d) School zone"
+      ],
+      "correct_answer": "c",
+      "explanation": "Round signs indicate railroad crossings ahead."
+    },
+    {
+      "id": 95,
+      "category": "Pentagon Signs",
+      "question": "A five-sided (pentagon) sign indicates:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Railroad crossing",
+        "b) School zone or school crossing",
+        "c) Hospital zone",
+        "d) Construction zone"
+      ],
+      "correct_answer": "b",
+      "explanation": "Pentagon signs indicate school zones or school crossings."
+    },
+    {
+      "id": 96,
+      "category": "No Passing Zone",
+      "question": "A pennant-shaped (three-sided) sign indicates:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Yield",
+        "b) School zone",
+        "c) No passing zone",
+        "d) Construction zone"
+      ],
+      "correct_answer": "c",
+      "explanation": "Pennant signs mark the beginning of no passing zones."
+    },
+    {
+      "id": 97,
+      "category": "Defensive Driving",
+      "question": "The best way to avoid hydroplaning on wet roads is to:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Drive faster to get through water quickly",
+        "b) Slow down",
+        "c) Use cruise control",
+        "d) Pump the brakes frequently"
+      ],
+      "correct_answer": "b",
+      "explanation": "Slowing down reduces the risk of hydroplaning."
+    },
+    {
+      "id": 98,
+      "category": "Night Driving",
+      "question": "When meeting an oncoming vehicle at night, you should:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Look directly at their headlights",
+        "b) Turn on your high beams",
+        "c) Look toward the right edge of the road",
+        "d) Close one eye"
+      ],
+      "correct_answer": "c",
+      "explanation": "Look toward the right edge of the road to avoid being blinded by headlights."
+    },
+    {
+      "id": 99,
+      "category": "Equipment Failure",
+      "question": "If you have a tire blowout while driving, you should:",
+      "type": "multiple_choice",
+      "options": [
+        "a) Slam on the brakes immediately",
+        "b) Keep a firm grip on the steering wheel and gradually slow down",
+        "c) Accelerate to maintain control",
+        "d) Turn sharply to the side of the road"
+      ],
+      "correct_answer": "b",
+      "explanation": "Maintain control and gradually slow down; don't brake suddenly."
+    },
+    {
+      "id": 100,
+      "category": "Insurance",
+      "question": "Illinois requires all vehicles to have mandatory liability insurance.",
+      "type": "true_false",
+      "correct_answer": "true",
+      "explanation": "Mandatory insurance is required for all vehicles in Illinois."
+    }
+  ],
+  "test_information": {
+    "total_questions": 100,
+    "passing_score": "80%",
+    "actual_test_questions": 35,
+    "time_limit": "None specified",
+    "retakes_allowed": 3,
+    "categories": [
+      "Traffic Laws",
+      "Signs and Signals",
+      "Safe Driving Practices",
+      "Illinois-specific Laws",
+      "DUI Laws",
+      "Teen Driver Regulations",
+      "License Requirements",
+      "Emergency Procedures",
+      "Vehicle Equipment",
+      "Sharing the Road"
+    ],
+    "tips": [
+      "Study the Illinois Rules of the Road manual thoroughly",
+      "Pay special attention to Illinois-specific laws and regulations",
+      "Practice identifying road signs by shape and color",
+      "Understand DUI laws and penalties",
+      "Know the special requirements for teen drivers",
+      "Review right-of-way rules carefully",
+      "Understand school bus laws",
+      "Know parking regulations and distances",
+      "Study speed limits for different areas",
+      "Review what to do in emergency situations"
+    ]
+  }
+}
