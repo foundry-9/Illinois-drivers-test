@@ -1,0 +1,504 @@
+/* ============================================
+   Mobile & Responsive Styles
+   ============================================ */
+
+/* Base mobile optimizations (applies to all devices) */
+@media (max-width: 768px) {
+  :root {
+    /* Increase font sizes for readability on mobile */
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+
+    /* Increase spacing for touch targets */
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    /* Prevent zoom on input focus */
+    font-size: 16px;
+  }
+
+  /* Prevent layout shift from scrollbar */
+  html {
+    overflow-y: scroll;
+  }
+
+  /* App layout */
+  .app {
+    max-width: 100%;
+  }
+
+  /* Screen base */
+  .screen {
+    max-width: 100%;
+  }
+
+  /* Welcome Screen Mobile */
+  .welcome-screen {
+    padding: var(--spacing-md);
+  }
+
+  .welcome-container {
+    max-width: 100%;
+  }
+
+  .welcome-header h1 {
+    font-size: 28px;
+  }
+
+  .car-emoji {
+    font-size: 60px;
+  }
+
+  .welcome-form,
+  .welcome-features {
+    border-radius: var(--radius-lg);
+  }
+
+  .form-group input {
+    font-size: 16px; /* Prevents zoom on focus in Safari */
+    padding: var(--spacing-md) var(--spacing-md);
+    min-height: 44px; /* Minimum touch target */
+  }
+
+  /* Dashboard Mobile */
+  .dashboard-main {
+    padding: var(--spacing-md);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .stat-card {
+    padding: var(--spacing-md);
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  /* Buttons mobile */
+  .btn {
+    min-height: 48px;
+    font-size: 16px;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .btn-large {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  /* Practice Test Mobile */
+  .test-header {
+    padding: var(--spacing-md);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .test-progress {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+  }
+
+  .test-main {
+    padding: var(--spacing-md);
+  }
+
+  .question-text {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .answer-option {
+    min-height: 56px;
+    padding: var(--spacing-md);
+    font-size: 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .answer-option:active:not(:disabled) {
+    background-color: rgba(33, 150, 243, 0.1);
+  }
+
+  .feedback-container {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md);
+  }
+
+  .explanation {
+    font-size: 14px;
+  }
+
+  /* Results mobile */
+  .results-summary {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .score-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .score-percentage {
+    font-size: 28px;
+  }
+
+  .category-breakdown {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .category-result {
+    padding: var(--spacing-md);
+  }
+
+  /* Settings mobile */
+  .settings-main {
+    padding: var(--spacing-md);
+  }
+
+  .settings-section {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .settings-section input,
+  .settings-section textarea {
+    font-size: 16px; /* Prevent zoom */
+    min-height: 44px;
+  }
+
+  /* Touch-friendly tap feedback */
+  button,
+  .answer-option,
+  .stat-card {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Hide scrollbar decorations on smaller screens */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  /* Safe area insets for notched devices */
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+    padding-top: max(0px, env(safe-area-inset-top));
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+
+  /* Status bar compensation */
+  .dashboard-header,
+  .test-header,
+  .settings-header {
+    padding-top: max(var(--spacing-lg), env(safe-area-inset-top));
+  }
+}
+
+/* Small phones (320px - 480px) */
+@media (max-width: 480px) {
+  :root {
+    --font-size-3xl: 24px;
+    --spacing-lg: 16px;
+  }
+
+  .welcome-header h1 {
+    font-size: 24px;
+  }
+
+  .welcome-header p {
+    font-size: 14px;
+  }
+
+  .car-emoji {
+    font-size: 50px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .question-text {
+    font-size: 16px;
+  }
+
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .score-percentage {
+    font-size: 24px;
+  }
+
+  .score-text {
+    font-size: 11px;
+  }
+
+  .btn-icon {
+    font-size: 20px;
+  }
+
+  .progress-bar-bg {
+    height: 6px;
+  }
+
+  .category-badge {
+    font-size: 11px;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* Medium phones / Tablets (768px - 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .question-text {
+    font-size: 18px;
+  }
+}
+
+/* Large tablets / Desktop */
+@media (min-width: 1025px) {
+  .dashboard-main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .test-main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .settings-main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .results-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   Touch Device Optimizations
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+  /* Touch devices */
+
+  /* Disable hover effects that don't make sense on touch */
+  button:not(:active) {
+    background-color: inherit;
+  }
+
+  .answer-option {
+    border-width: 2px;
+  }
+
+  .answer-option:active {
+    border-color: var(--primary-color);
+    background-color: rgba(33, 150, 243, 0.1);
+  }
+
+  /* Increase touch targets */
+  button,
+  input,
+  .answer-option,
+  .stat-card {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* Remove focus outline on touch devices */
+  button:focus,
+  input:focus,
+  .answer-option:focus {
+    outline: none;
+  }
+
+  /* Use active state instead of hover */
+  .btn:hover:not(:disabled) {
+    transform: none;
+  }
+
+  .btn:active:not(:disabled) {
+    transform: scale(0.98);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ============================================
+   Landscape Mode
+   ============================================ */
+@media (max-height: 500px) {
+  .dashboard-header h1,
+  .complete-header h1,
+  .settings-header h1 {
+    font-size: 20px;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .stat-card {
+    padding: var(--spacing-sm);
+  }
+
+  .stat-value {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .test-main {
+    padding: var(--spacing-sm);
+  }
+
+  .question-text {
+    font-size: 16px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .options-grid {
+    gap: var(--spacing-sm);
+  }
+
+  .answer-option {
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-height: 40px;
+  }
+
+  .btn-large {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 14px;
+  }
+}
+
+/* ============================================
+   Orientation Specific
+   ============================================ */
+@media (orientation: portrait) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (orientation: landscape) {
+  .welcome-illustration {
+    display: none;
+  }
+
+  .welcome-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+
+  .welcome-header {
+    text-align: left;
+  }
+
+  .welcome-form,
+  .welcome-features {
+    margin-bottom: 0;
+  }
+}
+
+/* ============================================
+   High Resolution Displays (Retina)
+   ============================================ */
+@media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+  button,
+  input {
+    border-width: 1px;
+  }
+}
+
+/* ============================================
+   Dark Mode Support (Optional)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  /* Future dark mode support can be added here */
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+  .dashboard-header,
+  .test-header,
+  .settings-header,
+  .btn-icon {
+    display: none;
+  }
+
+  .screen {
+    page-break-after: always;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}

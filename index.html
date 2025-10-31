@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Illinois Driver's License Practice Test - Prepare for your permit test with interactive questions and immediate feedback.">
+  <meta name="theme-color" content="#2196F3">
+  <title>Illinois Driver's License Practice Test</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%232196F3'>🚗</text></svg>">
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- Loading Screen -->
+    <div id="loading" class="screen loading-screen">
+      <div class="loading-spinner"></div>
+      <p>Loading your practice test...</p>
+    </div>
+
+    <!-- Welcome Screen -->
+    <div data-screen="welcome" class="screen welcome-screen hidden">
+      <div class="welcome-container">
+        <div class="welcome-header">
+          <h1>🚗 Illinois Driver Test Prep</h1>
+          <p>Master the Illinois permit test with interactive practice questions</p>
+        </div>
+
+        <div class="welcome-content">
+          <div class="welcome-illustration">
+            <div class="car-emoji">🚗</div>
+            <div class="road-lines"></div>
+          </div>
+
+          <form class="welcome-form">
+            <div class="form-group">
+              <label for="nameInput">What's your first name?</label>
+              <input
+                type="text"
+                id="nameInput"
+                placeholder="Enter your name"
+                maxlength="50"
+                autocomplete="off"
+              />
+            </div>
+
+            <button type="button" id="startBtn" class="btn btn-primary btn-large">
+              Let's Get Started! →
+            </button>
+          </form>
+
+          <div class="welcome-features">
+            <h3>How it works:</h3>
+            <ul>
+              <li>✅ 100 practice questions based on the Illinois permit test</li>
+              <li>📊 Track your progress and accuracy</li>
+              <li>🎯 Master questions through spaced repetition</li>
+              <li>📱 Works offline - study anywhere, anytime</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard / Home Screen -->
+    <div data-screen="dashboard" class="screen dashboard-screen hidden">
+      <header class="dashboard-header">
+        <h1 id="greeting">Welcome back!</h1>
+        <button id="settingsBtn" class="btn-icon">⚙️</button>
+      </header>
+
+      <main class="dashboard-main">
+        <!-- Stats Cards -->
+        <section class="stats-section">
+          <div id="dashboardStats" class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-label">Questions Attempted</div>
+              <div class="stat-value">0</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Accuracy</div>
+              <div class="stat-value">0%</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Mastered</div>
+              <div class="stat-value">0/100</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Current Streak</div>
+              <div class="stat-value">0</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+          <h2>Overall Progress</h2>
+          <div class="progress-container">
+            <div class="progress-bar-bg">
+              <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+            <p id="progressText" class="progress-text">0/100 questions mastered</p>
+          </div>
+        </section>
+
+        <!-- Primary Actions -->
+        <section class="actions-section">
+          <button id="practiceBtn" class="btn btn-primary btn-large">
+            📝 Start Practice Test
+          </button>
+
+          <button id="reviewBtn" class="btn btn-secondary btn-large" style="display: none;">
+            🔄 Review Missed Questions
+          </button>
+        </section>
+
+        <!-- Category Stats -->
+        <section class="category-stats-section">
+          <h3>Performance by Category</h3>
+          <div id="categoryStats" class="category-stats-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Practice Test Screen -->
+    <div data-screen="practice-test" class="screen practice-test-screen hidden">
+      <header class="test-header">
+        <div class="test-progress">
+          <span id="questionProgress" class="progress-text">Question 1 of 35</span>
+          <button id="exitBtn" class="btn-icon">✕</button>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="testProgressBar" class="progress-bar-fill"></div>
+        </div>
+      </header>
+
+      <main class="test-main">
+        <div class="category-badge" id="categoryBadge">Category</div>
+
+        <section class="question-section">
+          <h2 id="questionText" class="question-text">Question text</h2>
+        </section>
+
+        <section class="options-section">
+          <div id="optionsContainer" class="options-grid"></div>
+        </section>
+
+        <!-- Answer Feedback -->
+        <section id="feedbackContainer" class="feedback-container hidden">
+          <div class="feedback-message"></div>
+          <div class="explanation"></div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="test-navigation">
+          <button id="nextBtn" class="btn btn-primary btn-large" disabled>
+            Next Question →
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Review Mode Screen (inherits practice-test structure) -->
+    <div data-screen="review-mode" class="screen practice-test-screen hidden">
+      <header class="test-header">
+        <div class="test-progress">
+          <h2 id="reviewHeader">Let's Master These Questions!</h2>
+          <button id="exitBtn" class="btn-icon">✕</button>
+        </div>
+        <div class="progress-bar-bg">
+          <div id="testProgressBar" class="progress-bar-fill"></div>
+        </div>
+      </header>
+
+      <main class="test-main">
+        <div class="category-badge" id="categoryBadge">Category</div>
+
+        <section class="question-section">
+          <h2 id="questionText" class="question-text">Question text</h2>
+        </section>
+
+        <section class="options-section">
+          <div id="optionsContainer" class="options-grid"></div>
+        </section>
+
+        <section id="feedbackContainer" class="feedback-container hidden">
+          <div class="feedback-message"></div>
+          <div class="explanation"></div>
+        </section>
+
+        <div class="test-navigation">
+          <button id="nextBtn" class="btn btn-primary btn-large" disabled>
+            Next Question →
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Test Complete Screen -->
+    <div data-screen="test-complete" class="screen test-complete-screen hidden">
+      <header class="complete-header">
+        <h1>Test Complete! 🎉</h1>
+      </header>
+
+      <main class="complete-main">
+        <!-- Results Summary -->
+        <section class="results-section">
+          <div id="testResults" class="results-summary"></div>
+        </section>
+
+        <!-- Category Breakdown -->
+        <section class="category-breakdown-section">
+          <div id="categoryBreakdown" class="category-breakdown"></div>
+        </section>
+
+        <!-- Actions -->
+        <section class="complete-actions">
+          <button id="anotherTestBtn" class="btn btn-primary btn-large">
+            📝 Take Another Test
+          </button>
+          <button id="reviewMissedBtn" class="btn btn-secondary btn-large">
+            🔄 Review Missed Questions
+          </button>
+          <button id="dashboardBtn" class="btn btn-tertiary btn-large">
+            🏠 Back to Dashboard
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <!-- Settings Screen -->
+    <div data-screen="settings" class="screen settings-screen hidden">
+      <header class="settings-header">
+        <h1>Settings ⚙️</h1>
+        <button id="backBtn" class="btn-icon">←</button>
+      </header>
+
+      <main class="settings-main">
+        <!-- Profile Section -->
+        <section class="settings-section">
+          <h3>Profile</h3>
+          <div class="form-group">
+            <label for="settingsNameInput">Your Name</label>
+            <input
+              type="text"
+              id="settingsNameInput"
+              placeholder="Enter your name"
+              maxlength="50"
+            />
+            <button id="saveNameBtn" class="btn btn-secondary">Save Name</button>
+          </div>
+        </section>
+
+        <!-- Data Management -->
+        <section class="settings-section">
+          <h3>Data Management</h3>
+          <button id="exportBtn" class="btn btn-secondary btn-block">
+            📥 Export Progress (JSON)
+          </button>
+          <button id="resetBtn" class="btn btn-danger btn-block">
+            🔄 Reset All Progress
+          </button>
+        </section>
+
+        <!-- Information -->
+        <section class="settings-section info-section">
+          <h3>About</h3>
+          <p>
+            This practice test is designed to help you prepare for the Illinois
+            Driver's License permit test. It features 100 questions covering all
+            major topics on the real test.
+          </p>
+          <p>
+            <strong>Note:</strong> The actual Illinois driver's test contains 35
+            questions. Each practice session presents 35 randomized questions.
+          </p>
+          <p>
+            <a href="https://www.cyberdriveillinois.com/" target="_blank">
+              Visit the Illinois Secretary of State website ↗
+            </a>
+          </p>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="./js/storage.js"></script>
+  <script src="./js/questions.js"></script>
+  <script src="./js/quiz.js"></script>
+  <script src="./js/animations.js"></script>
+  <script src="./js/ui.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
